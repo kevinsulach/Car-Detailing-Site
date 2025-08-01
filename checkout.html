@@ -3,8 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Detail Aura</title>
+  <title>Checkout - Detail Aura</title>
   <link rel="stylesheet" href="style.css" />
+  <script>
+    window.onload = function() {
+      const selected = localStorage.getItem('selectedPackage');
+      document.getElementById('selected').textContent = selected || 'No package selected';
+    };
+  </script>
 </head>
 <body>
   <header class="navbar">
@@ -15,21 +21,13 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="contact.html">Contact</a>
-      <a href="checkout.html">Cart</a>
     </nav>
   </header>
 
   <section class="booking">
-    <h2>Contact Information</h2>
-    <div class="contact-details">
-      <p><strong>CEO:</strong> Kevin Sulach</p>
-      <p><strong>Phone:</strong> +1 778 320-6780</p>
-      <br>
-      <p><strong>Owner:</strong> Karam Singh</p>
-      <p><strong>Phone:</strong> +1 647 879-9162</p>
-      <br>
-      <p><strong>Email:</strong> kevin.sulach@gmail.com</p>
-    </div>
+    <h2>Checkout</h2>
+    <p>You have selected: <strong id="selected"></strong></p>
+    <p>We will contact you shortly to confirm your appointment. Thank you!</p>
   </section>
 
   <footer>

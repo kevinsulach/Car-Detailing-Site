@@ -1,20 +1,5 @@
-let cart = [];
-let total = 0;
-
-function addToCart(item, price) {
-  cart.push({ item, price });
-  total += price;
-  updateCartUI();
-}
-
-function updateCartUI() {
-  const cartItems = document.getElementById("cart-items");
-  const totalDisplay = document.getElementById("total");
-  cartItems.innerHTML = "";
-  cart.forEach(entry => {
-    const li = document.createElement("li");
-    li.textContent = `${entry.item} - $${entry.price} CAD`;
-    cartItems.appendChild(li);
-  });
-  totalDisplay.textContent = total;
+// Simple Add to Cart (redirect only)
+function addToCart(packageName) {
+  localStorage.setItem('selectedPackage', packageName);
+  window.location.href = 'checkout.html';
 }

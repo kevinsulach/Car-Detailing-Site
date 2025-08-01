@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="40" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="40" rx="8" fill="#0A0A0A"/>
+  <text x="40" y="26" fill="#ffffff" font-family="Montserrat, sans-serif" font-size="18" font-weight="700">Detail Aura</text>
+  <path d="M22 10L25 16H15L18 10H22Z" fill="#ff004c"/>
+  <circle cx="16" cy="20" r="2" fill="#ffffff"/>
+  <circle cx="24" cy="20" r="2" fill="#ffffff"/>
+</svg>
