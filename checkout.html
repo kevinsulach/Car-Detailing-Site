@@ -2,20 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout - Detail Aura</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    window.onload = function() {
-      const selected = localStorage.getItem('selectedPackage');
-      document.getElementById('selected').textContent = selected || 'No package selected';
-    };
-  </script>
+  <script defer src="checkout.js"></script>
 </head>
 <body>
   <header class="navbar">
     <div class="logo">
-      <img src="logo.svg" alt="Detail Aura Logo">
+      <img src="logo.svg" alt="Detail Aura Logo" style="height: 70px;" />
       <span>Detail Aura</span>
     </div>
     <nav>
@@ -24,14 +19,23 @@
     </nav>
   </header>
 
-  <section class="booking">
-    <h2>Checkout</h2>
-    <p>You have selected: <strong id="selected"></strong></p>
-    <p>We will contact you shortly to confirm your appointment. Thank you!</p>
-  </section>
+  <main class="checkout-container">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <div id="cart-summary">
+      <p>Subtotal: <span id="subtotal">$0.00 CAD</span></p>
+      <p>Tax (13%): <span id="tax">$0.00 CAD</span></p>
+      <p><strong>Total: <span id="total">$0.00 CAD</span></strong></p>
+      <div class="checkout-buttons">
+        <a href="index.html" class="btn">Continue Shopping</a>
+        <button class="btn">Book Now</button>
+      </div>
+    </div>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Detail Aura</p>
+    <p>&copy; 2025 Detail Aura | CEO: Kevin Sulach | Owner: Karam Singh</p>
+    <p>Contact: +1 778 320-6780 | +1 647 879-9162</p>
   </footer>
 </body>
 </html>
