@@ -1,40 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Elite Car Detailing</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Detail Aura</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Elite Car Detailing</h1>
-    <p>Premium Detailing Packages</p>
+    <h1>Detail Aura</h1>
+    <p>Premium Car Detailing Packages in CAD</p>
+    <nav><a href="contact.html">Contact</a></nav>
   </header>
 
   <section class="packages">
     <div class="card">
       <h2>Normal Detail</h2>
       <p>Exterior wash, interior vacuum, windows</p>
-      <span>$49</span>
+      <span>$49 CAD</span>
       <button onclick="addToCart('Normal Detail', 49)">Add to Cart</button>
     </div>
     <div class="card">
       <h2>Silver Detail</h2>
       <p>Normal + Wax, tire shine</p>
-      <span>$79</span>
+      <span>$79 CAD</span>
       <button onclick="addToCart('Silver Detail', 79)">Add to Cart</button>
     </div>
     <div class="card">
       <h2>Gold Detail</h2>
       <p>Silver + Interior shampoo, engine bay</p>
-      <span>$129</span>
+      <span>$129 CAD</span>
       <button onclick="addToCart('Gold Detail', 129)">Add to Cart</button>
     </div>
     <div class="card">
       <h2>Platinum Detail</h2>
       <p>Gold + Ceramic coat, paint correction</p>
-      <span>$199</span>
+      <span>$199 CAD</span>
       <button onclick="addToCart('Platinum Detail', 199)">Add to Cart</button>
     </div>
   </section>
@@ -42,7 +43,23 @@
   <section class="cart">
     <h2>Cart</h2>
     <ul id="cart-items"></ul>
-    <p>Total: $<span id="total">0</span></p>
+    <p>Total: $<span id="total">0</span> CAD</p>
+  </section>
+
+  <section class="form">
+    <h2>Book Your Appointment</h2>
+    <form>
+      <label for="make">Car Make:</label>
+      <input type="text" id="make" name="make" required />
+
+      <label for="model">Car Model:</label>
+      <input type="text" id="model" name="model" required />
+
+      <label for="condition">Condition (1–10):</label>
+      <input type="number" id="condition" name="condition" min="1" max="10" required />
+
+      <button type="submit">Book Now</button>
+    </form>
   </section>
 
   <script src="script.js"></script>
