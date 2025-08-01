@@ -13,7 +13,7 @@ function updateCartUI() {
   cartItems.innerHTML = "";
   cart.forEach(entry => {
     const li = document.createElement("li");
-    li.textContent = `${entry.item} - $${entry.price}`;
+    li.textContent = `${entry.item} - $${entry.price} CAD`;
     cartItems.appendChild(li);
   });
   totalDisplay.textContent = total;
