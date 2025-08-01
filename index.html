@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elite Car Detailing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Elite Car Detailing</h1>
+    <p>Premium Detailing Packages</p>
+  </header>
+
+  <section class="packages">
+    <div class="card">
+      <h2>Normal Detail</h2>
+      <p>Exterior wash, interior vacuum, windows</p>
+      <span>$49</span>
+      <button onclick="addToCart('Normal Detail', 49)">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h2>Silver Detail</h2>
+      <p>Normal + Wax, tire shine</p>
+      <span>$79</span>
+      <button onclick="addToCart('Silver Detail', 79)">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h2>Gold Detail</h2>
+      <p>Silver + Interior shampoo, engine bay</p>
+      <span>$129</span>
+      <button onclick="addToCart('Gold Detail', 129)">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h2>Platinum Detail</h2>
+      <p>Gold + Ceramic coat, paint correction</p>
+      <span>$199</span>
+      <button onclick="addToCart('Platinum Detail', 199)">Add to Cart</button>
+    </div>
+  </section>
+
+  <section class="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="total">0</span></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

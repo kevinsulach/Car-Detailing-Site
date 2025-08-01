@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1c1c1c;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.packages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 250px;
+  text-align: center;
+}
+
+.card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.card span {
+  font-weight: bold;
+  display: block;
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #0066ff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart {
+  background-color: #eee;
+  padding: 2rem;
+  text-align: center;
+}
