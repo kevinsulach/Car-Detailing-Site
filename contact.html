@@ -1,64 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us | Detail Aura</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Detail Aura</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    .contact-container {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background: #111;
-      color: #eee;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 60, 60, 0.3);
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-
-    .contact-container h2 {
-      color: #ff3c3c;
-      font-size: 2rem;
+    .contact-box {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+    }
+    .contact-box h2 {
+      color: #1e90ff;
       margin-bottom: 1rem;
     }
-
-    .contact-container p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .navbar a:hover {
-      color: #ff3c3c;
+    .contact-box p {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <img src="logo.svg" alt="Detail Aura Logo" style="height: 80px; margin-right: 10px;" />
-      <span style="font-size: 2rem; font-weight: bold;">Detail Aura</span>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
-      <a href="checkout.html">Cart</a>
-    </nav>
-  </header>
-
-  <main class="contact-container">
-    <h2>Contact & Ownership Information</h2>
-    <p><strong>CEO:</strong> Kevin Sulach<br/>
-    Phone: +1 778 320-6780<br/><br/>
-    <strong>Owner:</strong> Karam Singh<br/>
-    Phone: +1 647 879-9162</p>
-    <p><strong>Email:</strong> kevin.sulach@gmail.com</p>
-    <p><strong>Business Hours:</strong> 9 AM – 6 PM, Monday to Saturday</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Detail Aura | CEO: Kevin Sulach | Owner: Karam Singh</p>
-    <p>Contact: +1 778 320-6780 | +1 647 879-9162</p>
-  </footer>
+  <div class="contact-box">
+    <h2>Contact Us</h2>
+    <p><strong>CEO:</strong> Kevin Sulach</p>
+    <p><strong>Owner:</strong> Karam Singh</p>
+    <p><strong>Phone 1:</strong> +1 778 320-6780</p>
+    <p><strong>Phone 2:</strong> +1 647 879-9162</p>
+    <p>&copy; 2025 Detail Aura</p>
+  </div>
 </body>
 </html>
