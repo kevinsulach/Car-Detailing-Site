@@ -1,36 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Checkout | Detail Aura</title>
-  <link rel="stylesheet" href="style.css"/>
-  <script defer src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Detail Aura</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <img src="logo.svg" alt="Detail Aura Logo" style="height: 80px; margin-right: 10px;" />
-      <span style="font-size: 2rem; font-weight: bold;">Detail Aura</span>
+  <header class="site-header">
+    <div class="logo-container">
+      <img src="logo-car.png" alt="Detail Aura Logo" class="logo" />
+      <h1 class="site-title">Detail Aura</h1>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
-      <a href="checkout.html">Cart</a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main class="checkout-container">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p id="total">Subtotal: $0 CAD</p>
-    <p id="tax">Tax (13%): $0 CAD</p>
-    <p id="grand-total">Total: $0 CAD</p>
+  <main class="checkout-page">
+    <section class="checkout-container">
+      <h2>Your Cart</h2>
+      <ul id="cart-list"></ul>
+      <p id="total-price">Subtotal: $0.00 CAD</p>
+      <p id="tax">Tax (13%): $0.00 CAD</p>
+      <p id="grand-total">Total: $0.00 CAD</p>
+      <button onclick="clearCart()" class="cta-button">Clear Cart</button>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Detail Aura | CEO: Kevin Sulach | Owner: Karam Singh</p>
-    <p>Contact: +1 778 320-6780 | +1 647 879-9162</p>
+  <footer class="site-footer">
+    <p>&copy; 2025 Detail Aura. All rights reserved.</p>
   </footer>
+
+  <script>
+    const packages = {
+      normal: { name: "Normal Detail", price: 60 },
+      silver: { name: "Silver Detail", price: 100 },
+      gold: { name: "Gold Detail", price: 150 },
+      platinum: { name: "Platinum Detail", price: 200 }
+    };
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      const cartList = document.getElementById("cart-list");
+      cartList.innerHTML = "";
+      let subtotal = 0;
+      cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${packages[item].name} - $${packages[item].price} CAD <button onclick="removeItem(${index})">Remove</button>`;
+        cartList.appendChild(li);
+        subtotal += packages[item].price;
+      });
+      const tax = subtotal * 0.13;
+      const total = subtotal + tax;
+      document.getElementById("total-price").textContent = `Subtotal: $${subtotal.toFixed(2)} CAD`;
+      document.getElementById("tax").textContent = `Tax (13%): $${tax.toFixed(2)} CAD`;
+      document.getElementById("grand-total").textContent = `Total: $${total.toFixed(2)} CAD`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem("cart");
+      renderCart();
+    }
+
+    renderCart();
+  </script>
 </body>
+
 </html>
