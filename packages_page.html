@@ -1,73 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Packages - Detail Aura</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Aura - Packages</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <header class="site-header">
     <div class="logo-container">
-      <img src="logo-car.png" alt="Detail Aura Logo" class="logo">
+      <img src="logo-car.png" alt="Detail Aura Logo" class="logo" />
       <span class="site-title">Detail Aura</span>
     </div>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="packages.html">Packages</a></li>
         <li><a href="contact.html">Contact</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="about">
-    <h2>Choose Your Detailing Package</h2>
-    <div class="packages">
+  <main class="packages">
+    <h2>Our Detailing Packages</h2>
+    <div class="package-grid">
       <div class="package">
-        <h3>Normal Package</h3>
-        <p>Exterior wash and light interior cleaning.</p>
-        <p>$50 CAD</p>
-        <button onclick="addToCart('Normal', 50)">Add to Cart</button>
+        <h3>Normal Detail</h3>
+        <p>Exterior Wash + Quick Interior Vacuum</p>
+        <p><strong>$60 CAD</strong></p>
+        <button class="add-to-cart" data-name="Normal Detail" data-price="60">Add to Cart</button>
       </div>
       <div class="package">
         <h3>Silver Package</h3>
-        <p>Includes exterior polish and interior vacuum.</p>
-        <p>$100 CAD</p>
-        <button onclick="addToCart('Silver', 100)">Add to Cart</button>
+        <p>Includes Normal + Tire Shine + Dashboard Polish</p>
+        <p><strong>$120 CAD</strong></p>
+        <button class="add-to-cart" data-name="Silver Package" data-price="120">Add to Cart</button>
       </div>
       <div class="package">
         <h3>Gold Package</h3>
-        <p>Full exterior/interior detailing and waxing.</p>
-        <p>$150 CAD</p>
-        <button onclick="addToCart('Gold', 150)">Add to Cart</button>
+        <p>Includes Silver + Seat Shampoo + Trunk Clean</p>
+        <p><strong>$180 CAD</strong></p>
+        <button class="add-to-cart" data-name="Gold Package" data-price="180">Add to Cart</button>
       </div>
       <div class="package">
         <h3>Platinum Package</h3>
-        <p>All-inclusive with engine bay cleaning.</p>
-        <p>$200 CAD</p>
-        <button onclick="addToCart('Platinum', 200)">Add to Cart</button>
+        <p>Includes Gold + Engine Bay + Ceramic Coating</p>
+        <p><strong>$300 CAD</strong></p>
+        <button class="add-to-cart" data-name="Platinum Package" data-price="300">Add to Cart</button>
       </div>
     </div>
-  </section>
-
-  <section class="checkout-link">
-    <a href="checkout.html" class="cta-button">Go to Checkout</a>
-  </section>
+  </main>
 
   <footer class="site-footer">
     <p>&copy; 2025 Detail Aura. All rights reserved.</p>
   </footer>
 
   <script>
-    function addToCart(packageName, price) {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push({ name: packageName, price });
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(`${packageName} package added to cart.`);
-    }
-  </script>
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
 
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push({ name, price });
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert(`${name} added to cart.`);
+      });
+    });
+  </script>
 </body>
 </html>
