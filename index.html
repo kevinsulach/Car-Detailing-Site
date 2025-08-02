@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail Aura</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
+  <style>
+    .hero-text {
+      animation: fadeSlideIn 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeSlideIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .cart-item {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cart-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(255, 60, 60, 0.4);
+    }
+
+    #booking-form input,
+    #booking-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background: #222;
+      color: #fff;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    #booking-form input:focus,
+    #booking-form textarea:focus {
+      outline: none;
+      border-color: #ff3c3c;
+      background-color: #1a1a1a;
+    }
+
+    .navbar a:hover {
+      color: #ff3c3c;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="logo.svg" alt="Detail Aura Logo" style="height: 80px; margin-right: 10px;">
+      <span style="font-size: 2rem; font-weight: bold;">Detail Aura</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="checkout.html">Cart</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="height: 45vh;">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>Your Car Deserves the Best</h1>
+      <p>Choose from our expertly crafted detailing packages.</p>
+    </div>
+  </section>
+
+  <section class="checkout">
+    <h2>Our Detailing Packages</h2>
+    <div class="cart-item">
+      <h3>Normal Detail - $50 CAD</h3>
+      <p>Includes exterior wash, interior vacuum, and window cleaning.</p>
+      <button onclick="addToCart('Normal Detail', 50)">Add to Cart</button>
+    </div>
+    <div class="cart-item">
+      <h3>Silver Package - $100 CAD</h3>
+      <p>Includes Normal Detail plus tire shine, wax polish, and dashboard conditioning.</p>
+      <button onclick="addToCart('Silver Package', 100)">Add to Cart</button>
+    </div>
+    <div class="cart-item">
+      <h3>Gold Package - $150 CAD</h3>
+      <p>Includes Silver Package plus engine bay cleaning and interior shampoo.</p>
+      <button onclick="addToCart('Gold Package', 150)">Add to Cart</button>
+    </div>
+    <div class="cart-item">
+      <h3>Platinum Package - $200 CAD</h3>
+      <p>Includes Gold Package plus ceramic coating and leather treatment.</p>
+      <button onclick="addToCart('Platinum Package', 200)">Add to Cart</button>
+    </div>
+  </section>
+
+  <section class="checkout">
+    <h2>Book Now</h2>
+    <form id="booking-form">
+      <input type="text" placeholder="Car Make" required>
+      <input type="text" placeholder="Car Model" required>
+      <textarea placeholder="Describe condition" required></textarea>
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Detail Aura | CEO: Kevin Sulach | Owner: Karam Singh</p>
+    <p>Contact: +1 778 320-6780 | +1 647 879-9162</p>
+  </footer>
+</body>
+</html>
