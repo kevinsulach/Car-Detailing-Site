@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Detail Aura</title>
+  <title>Detail Aura - Car Detailing</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="logo-car.png" />
 </head>
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="logo-container">
       <img src="logo-car.png" alt="Detail Aura Logo" class="logo" />
@@ -15,31 +17,80 @@
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="packages.html">Packages</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-overlay">
       <div class="hero-content">
-        <h2>Drive Clean. Drive Proud.</h2>
-        <p>Book your premium car detailing today!</p>
-        <a href="#packages" class="cta-button">View Packages</a>
+        <h2>Premium Car Detailing</h2>
+        <p>Transform your vehicle with expert care</p>
+        <a href="packages.html" class="cta-button">View Packages</a>
       </div>
     </div>
   </section>
 
-  <section id="packages" class="about">
-    <h2>Our Packages</h2>
-    <p>Select the best detailing package for your vehicle. All prices in CAD.</p>
-    <!-- Packages will go here -->
+  <!-- Booking Form -->
+  <section class="booking-form">
+    <h2>Book Your Appointment</h2>
+    <form id="bookForm">
+      <input type="text" id="carMake" placeholder="Car Make" required />
+      <input type="text" id="carModel" placeholder="Car Model" required />
+      <select id="carCondition" required>
+        <option value="">Condition</option>
+        <option value="Good">Good</option>
+        <option value="Bad">Bad</option>
+        <option value="Worst">Worst</option>
+      </select>
+      <button type="submit" class="cta-button">Book Now</button>
+    </form>
   </section>
 
+  <!-- Popup Modal -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span id="popup-close">&times;</span>
+      <h3>Thank You!</h3>
+      <p id="popup-message">We’ll be expecting your car soon.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="site-footer">
+    <p>Owner: Karam Singh | +1 647 879-9162</p>
+    <p>CEO: Kevin Sulach | +1 778 320-6780</p>
     <p>&copy; 2025 Detail Aura. All rights reserved.</p>
   </footer>
+
+  <script>
+    const form = document.getElementById('bookForm');
+    const popup = document.getElementById('popup');
+    const popupMsg = document.getElementById('popup-message');
+    const popupClose = document.getElementById('popup-close');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const model = document.getElementById('carModel').value;
+      const date = new Date().toLocaleString();
+      popupMsg.innerText = `You booked for: ${model} — Please bring it on ${date}`;
+      popup.style.display = 'flex';
+    });
+
+    popupClose.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target == popup) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+
 </body>
 </html>
