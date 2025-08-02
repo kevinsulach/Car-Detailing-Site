@@ -62,7 +62,7 @@ body {
 /* Hero Section */
 .hero {
   height: 90vh;
-  background: url("Gemini_Generated_Image_6lk3c56lk3c56lk3.jpg") no-repeat center center/cover;
+  background: url("hero-bg.jpg") no-repeat center center/cover;
   position: relative;
   display: flex;
   align-items: center;
