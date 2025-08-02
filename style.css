@@ -31,13 +31,13 @@ body {
 }
 
 .logo {
-  width: 60px;
+  width: 45px;
   height: auto;
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 .site-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #ff2c2c;
   font-weight: bold;
 }
@@ -61,8 +61,8 @@ body {
 
 /* Hero Section */
 .hero {
-  height: 90vh;
-  background: url("hero-bg.jpg") no-repeat center center/cover;
+  height: 100vh;
+  background: url("Gemini_Generated_Image_6lk3c56lk3c56lk3.jpg") no-repeat center center/cover;
   position: relative;
   display: flex;
   align-items: center;
@@ -84,12 +84,12 @@ body {
 }
 
 .hero-content h2 {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 1.5rem;
 }
 
