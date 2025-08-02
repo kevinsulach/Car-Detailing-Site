@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Detail Aura</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <script defer src="script.js"></script>
   <style>
     .hero-text {
@@ -50,13 +50,30 @@
     .navbar a:hover {
       color: #ff3c3c;
     }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .car-logo {
+      height: 60px;
+      max-height: 80px;
+      object-fit: contain;
+      margin-right: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .car-logo {
+        height: 50px;
+      }
+    }
   </style>
 </head>
 <body>
   <header class="navbar">
     <div class="logo">
-      <img src="logo.svg" alt="Detail Aura Logo" style="height: 80px; margin-right: 10px;">
-      <span style="font-size: 2rem; font-weight: bold;">Detail Aura</span>
+      <img src="logo-car.png" alt="Detail Aura Logo" class="car-logo" />
     </div>
     <nav>
       <a href="index.html">Home</a>
@@ -100,8 +117,8 @@
   <section class="checkout">
     <h2>Book Now</h2>
     <form id="booking-form">
-      <input type="text" placeholder="Car Make" required>
-      <input type="text" placeholder="Car Model" required>
+      <input type="text" placeholder="Car Make" required />
+      <input type="text" placeholder="Car Model" required />
       <textarea placeholder="Describe condition" required></textarea>
       <button type="submit">Book Now</button>
     </form>
